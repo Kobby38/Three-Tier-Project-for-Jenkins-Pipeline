@@ -1,7 +1,7 @@
 #creating database subnet group
-resource "aws_db_subnet_group" "rds_mysql_subnet_group"{
- name = var.engine
- subnet_ids = [aws_subnet.web_subnet-1.id,aws_subnet.database_subnet_2.id]
+resource "aws_db_subnet_group" "rds_mysql_subnet_group" {
+  name       = var.engine
+  subnet_ids = [aws_subnet.web_subnet-1.id, aws_subnet.database_subnet_2.id]
 
 }
 
@@ -11,8 +11,8 @@ resource "aws_db_instance" "three_tier_db" {
   engine                 = var.engine
   engine_version         = var.db_engine_version
   instance_class         = var.db_instance_class
-  username               = var.dbuser
-  password               = var.dbpassword
+  username               = var.db_username
+  password               = var.db_password
   multi_az               = var.enable_multi_AZ
   storage_type           = var.storagetype
   db_subnet_group_name   = aws_db_subnet_group.rds_mysql_subnet_group.id
