@@ -305,8 +305,182 @@ variable "public_access" {
     type    = bool
 }
 
-variable "target_id" {
-    description = "make target id a variable"
+variable "engine" {
+    description = "making engine a variable"
+    default = "mysql"
+    type    = string
+}
+
+variable "storagetype" {
+    description = "making storage type a variable"
+    default = "gp2"
+    type    = string
+}
+
+variable "publicalbname" {
+    description = "making albname a variable"
+    default = "External-LB"
+    type    = string
+}
+
+variable "internal" {
+    description = "making internal alb a variable"
+    default = false
+    type    = bool
+}
+
+variable "ipaddresstype" {
+    description = "making internal alb a variable"
+    default = "ipv4"
+    type    = string
+}
+
+variable "loadbalancertype" {
+    description = "making loadbalancer type a variable"
+    default = "application"
+    type    = string
+}
+
+variable "enabledeletionprotection" {
+    description = "making deletion protection a variable"
+    default = false
+    type    = bool
+}
+
+variable "listener_port" {
+    description = "making port a variable"
+    default = 80
+    type    = number
+}
+
+variable "protocol" {
+    description = "making protocol a variable"
+    default = "HTTP"
+    type    = string
+}
+
+variable "default_action_type" {
+    description = "making default action a variable"
+    default = "forward"
+    type    = string
+}
+
+variable "enablehealthcheck" {
+    description = "making healthcheck a variable"
+    default = true
+    type    = bool
+}
+
+variable "healthcheckinterval" {
+    description = "making interval a variable"
+    default = 30
+    type    = number
+}
+
+variable "healthcheckport" {
+    description = "making healthcheck port a variable"
+    default = "80"
+    type    = string
+}
+
+variable "healthchecktimeout" {
+    description = "making timeout a variable"
+    default = 6
+    type    = number
+}
+
+variable "healthythreshold" {
+    description = "making healthythreshold a variable"
+    default = 5
+    type    = number
+}
+
+variable "unhealthythreshold" {
+    description = "making healthythreshold a variable"
+    default = 2
+    type    = number
+}
+
+variable "healthcheckmatcher" {
+    description = "making matcher a variable"
+    default = "200"
+    type    = string
+}
+
+variable "healthcheckname" {
+    description = "making name a variable"
+    default = "threetierpub"
+    type    = string
+}
+
+variable "target-type" {
+    description = "making target type a variable"
     default = "instance"
+    type    = string
+}
+
+variable "port" {
+    description = "making port after target type a variable"
+    default = "80"
+    type    = string
+}
+
+variable "internalalbname" {
+    description = "making internal alb a variable"
+    default = "alb-internal7"
+    type    = string
+}
+
+variable "internal-internal" {
+    description = "making internal a variable"
+    default = true
+    type    = bool
+}
+
+variable "int-targetgroupname" {
+    description = "making internal target group name a variable"
+    default = "threetier-internal7"
+    type    = string
+}
+
+variable "asgname-public" {
+    description = "making webserver asg name a variable"
+    default = "Webserver-ASG"
+    type    = string
+}
+
+variable "desired_capacity" {
+    description = "making asg desired capaciity a variable"
+    default = 4
+    type    = number
+}
+
+variable "maxsize" {
+    description = "making max size a variable"
+    default = 6
+    type    = number
+}
+
+variable "minsize" {
+    description = "making max size a variable"
+    default = 4
+    type    = number
+}
+
+variable "health_check_grace_period" {
+    description = "making health check grace period a variable"
+    default = 300
+    type    = number
+}
+
+variable "health_check_type" {
+    description = "making health check type a variable"
+    default = "ELB"
+    type    = string
+}
+
+variable "apptier-private" {
+    description = "making App Tier name a variable"
+    default = "Appserver-ASG"
     type    = string
 }
